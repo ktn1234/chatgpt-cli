@@ -13,9 +13,9 @@
 2. Run the script `scripts/bash/chatgpt.sh`
 3. Start Chatting!
 
-## For zsh
+## For zsh (debian or macOS)
 
-1. Replace `OPEN_AI_API_KEY` variable inside `scripts/zsh/chatgpt.sh` with your API Key from OpenAI
+1. Replace `OPEN_AI_API_KEY` variable inside `scripts/zsh/{operating-system}/chatgpt.sh` with your API Key from OpenAI
 2. Run the script `scripts/bash/chatgpt.sh`
 3. Start Chatting!
 
