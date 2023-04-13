@@ -1,4 +1,4 @@
-import "dotenv/config";
+import dotenv from "dotenv";
 import readline from "readline";
 import {
   ChatCompletionRequestMessage,
@@ -7,6 +7,10 @@ import {
   OpenAIApi,
 } from "openai";
 import { AxiosError, AxiosResponse } from "axios";
+
+dotenv.config({
+  path: __dirname + "/../.env",
+});
 
 const openAi = new OpenAIApi(
   new Configuration({
