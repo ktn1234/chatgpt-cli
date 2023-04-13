@@ -14,6 +14,11 @@ function chatgpt() {
                         break
                 fi
 
+                if [[ $userInput == "" ]]; then
+                        continue
+                fi
+
+                userInput=${userInput//\"/\\\"} # escape double quotes
                 conversationHistory+=( '{"role": "user", "content": "'"$userInput"'"}' )
 
                 messages=$(printf '%s,' "${conversationHistory[@]}")
