@@ -35,6 +35,11 @@ userInterface.on("line", async (input) => {
     return;
   }
 
+  if (input === "") {
+    userInterface.prompt();
+    return;
+  }
+
   conversationHistory.push({ role: "user", content: input });
 
   let response: AxiosResponse<CreateChatCompletionResponse, any>;
