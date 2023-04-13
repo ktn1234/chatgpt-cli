@@ -49,6 +49,7 @@ userInterface.on("line", async (input) => {
       messages: conversationHistory,
     })) as AxiosResponse<CreateChatCompletionResponse, any>;
   } catch (error) {
+    console.error("Error Response:");
     console.error((error as AxiosError).response?.data || null);
     console.error("An error occurred. Exiting...");
     userInterface.close();

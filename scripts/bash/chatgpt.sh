@@ -2,7 +2,7 @@
 
 export OPEN_AI_API_KEY="PLACEHOLDER"
 function chatgpt() {
-        conversationHistory=( '{"role": "system", "content": "You are a helpful assistant."}' )
+        conversationHistory=('{"role": "system", "content": "You are a helpful assistant."}')
 
         echo "ChatGPT Initialized - Start Chatting (type 'exit' to quit)"
 
@@ -19,7 +19,7 @@ function chatgpt() {
                 fi
 
                 userInput=${userInput//\"/\\\"} # escape double quotes
-                conversationHistory+=( '{"role": "user", "content": "'"$userInput"'"}' )
+                conversationHistory+=('{"role": "user", "content": "'"$userInput"'"}')
 
                 messages=$(printf '%s,' "${conversationHistory[@]}")
                 messages=${messages%,} # remove the trailing comma
@@ -35,7 +35,10 @@ function chatgpt() {
 
                 # check if the response is an error
                 if [[ $response == *"error"* ]]; then
+                        echo
+                        echo "Error Response:"
                         echo $response
+                        echo
                         echo "An error occurred. Exiting..."
                         return
                 fi
@@ -44,7 +47,7 @@ function chatgpt() {
 
                 echo -e "< $assistantMessage"
 
-                conversationHistory+=( '{"role": "assistant", "content": "'"$assistantMessage"'"}' )
+                conversationHistory+=('{"role": "assistant", "content": "'"$assistantMessage"'"}')
         done
 }
 

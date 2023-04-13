@@ -35,7 +35,10 @@ function chatgpt() {
 
         # check if the response is an error
         if [[ $response == *"error"* ]]; then
+            echo
+            echo "Error Response:"
             echo $response
+            echo
             echo "An error occurred. Exiting..."
             return
         fi
