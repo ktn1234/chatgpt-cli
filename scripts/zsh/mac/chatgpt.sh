@@ -33,8 +33,10 @@ function chatgpt() {
                                 "messages": ['"$messages"']
                         }')
 
-        # check if the response is an error
-        if [[ $response == *"error"* ]]; then
+        # TODO: Check to see if curl command gives back a non 2xx status code and handle it
+        # check if the response is an invalid_request_error or invalid_api_key
+        # All error codes from OpanAI API https://platform.openai.com/docs/guides/error-codes/api-errors
+        if [[ $response == *"invalid_request_error"* || $response == *"invalid_api_key"* ]]; then
             echo
             echo "Error Response:"
             echo $response
