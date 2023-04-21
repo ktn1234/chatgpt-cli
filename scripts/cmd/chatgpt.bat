@@ -1,7 +1,7 @@
 @echo off
 
 SET "URL=https://api.openai.com/v1/chat/completions"
-SET "OPEN_AI_API_KEY=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"
+SET "OPEN_AI_API_KEY=your_api_key_here"
 SET "HEADER_CONTENT_TYPE=Content-Type: application/json"
 SET "HEADER_AUTHORIZATION=Authorization: Bearer %OPEN_AI_API_KEY%"
 
