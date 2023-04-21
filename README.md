@@ -1,29 +1,55 @@
-# ChatGPT CLI
+# 🤖 ChatGPT CLI
 
-## For Node.js
+## 📋 Prerequisites
 
-1. Install dependencies via npm, yarn, pnpm
-2. Create a `.env` file at the root level and put in your `OPEN_AI_API_KEY` in there like so `OPEN_AI_API_KEY=key_value`
-3. Run the npm script `start` via npm, yarn, or pnpm
-4. Start Chatting!
+Before using ChatGPT CLI, make sure you have the following:
 
-## For bash
+- [Node.js](https://nodejs.org/en) installed on your machine
+- An API key from OpenAI. You can get one by signing up for their [GPT-3 beta program](https://beta.openai.com/signup/).
 
-1. Replace `OPEN_AI_API_KEY` variable inside `scripts/bash/chatgpt.sh` with your API Key from OpenAI
-2. Run the script `scripts/bash/chatgpt.sh`
-3. Start Chatting!
+## ⚙️ Setup and Usage
 
-## For zsh (debian or macOS)
+### 🚀 Node.js
 
-1. Replace `OPEN_AI_API_KEY` variable inside `scripts/zsh/{operating-system}/chatgpt.sh` with your API Key from OpenAI
-2. Run the script `scripts/bash/chatgpt.sh`
-3. Start Chatting!
+1. Install dependencies by running the command `npm install` in your terminal.
+2. Create a `.env` file at the root of the project and add your OpenAI API key in the format `OPEN_AI_API_KEY=your_api_key_here`.
+3. Run the command `npm start` to start the ChatGPT CLI.
+4. Start chatting by entering your messages and pressing enter.
 
-## For Runtime Configurations in bash and zsh
+### 💻 Bash
 
-1. Replace `OPEN_AI_API_KEY` variable inside `scripts/bash/chatgpt.sh` or `scripts/zsh/chatgpt.sh` with your API Key from OpenAI
-2. Copy `export OPEN_AI_API_KEY="PLACEHOLDER"` and the entire `function chatgpt()`
-3. Paste the above into your `.bashrc` or `.zshrc` file
-4. Close and re-open your shell terminal completely or run `source path/to/rc/file`
-5. Run `chatgpt`
-6. Start Chatting!
+1. Replace `your_api_key_here` with your OpenAI API key inside `scripts/bash/chatgpt.sh`.
+2. Run the command `scripts/bash/chatgpt.sh` in your terminal.
+3. Start chatting by entering your messages and pressing enter.
+
+### 💻 Zsh (Debian or macOS)
+
+1. Replace `your_api_key_here` with your OpenAI API key inside `scripts/zsh/{operating-system}/chatgpt.sh`.
+2. Run the command `scripts/zsh/{operating-system}/chatgpt.sh` in your terminal.
+3. Start chatting by entering your messages and pressing enter.
+
+### 🔧 CLI Runtime Configurations (bash, zsh, or Node.js)
+
+To avoid typing your OpenAI API key every time you use ChatGPT CLI, you can configure it to use your key automatically.
+
+#### 💻 Bash or Zsh
+
+1. Replace `your_api_key_here` with your OpenAI API key inside `scripts/bash/chatgpt.sh` or `scripts/zsh/chatgpt.sh`.
+2. Copy `export OPEN_AI_API_KEY="your_api_key_here"` and the entire `function chatgpt()` from `scripts/bash/chatgpt.sh` or `scripts/zsh/chatgpt.sh`.
+3. Paste the above into your `.bashrc` or `.zshrc` file.
+4. Close and re-open your shell terminal completely or run `source path/to/rc/file`.
+5. Run the command `chatgpt` in your terminal.
+6. Start chatting by entering your messages and pressing enter.
+
+#### 🚀 Node.js
+
+1. Run the command `npm run build` to transpile the code to Node.js.
+2. Copy `alias chatgpt=/usr/bin/node /absolute/path/to/repo/build/index.js` from the output.
+3. Paste the above into your `.bashrc` or `.zshrc` file.
+4. Close and re-open your shell terminal completely or run `source path/to/rc/file`.
+5. Run the command `chatgpt` in your terminal.
+6. Start chatting by entering your messages and pressing enter.
+
+#### Using a Different Package Manager
+
+If you are using a package manager other than npm, replace the `npm` command with the appropriate command for your package manager. For example, if you are using `yarn`, replace `npm install` with `yarn install`. If you are using `pnpm`, replace `npm install` with `pnpm install`.
