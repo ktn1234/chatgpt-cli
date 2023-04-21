@@ -58,10 +58,7 @@ SET "PAYLOAD={ \"model\": \"gpt-3.5-turbo\", \"messages\": [ %MESSAGES% ] }"
 @REM Get response from ChatGPT
 FOR /F "tokens=* USEBACKQ" %%F IN (`curl %URL% -s -H "%HEADER_CONTENT_TYPE%" -H "%HEADER_AUTHORIZATION%" -d "%PAYLOAD%"`) DO SET RESPONSE=%%F
 
-@REM TODO: Parse response -> RESPONSE.choices[0].message.content
-SET "CHATGPT_RESPONSE=findstr /i /c:"content" %RESPONSE%"
-
-echo %CHATGPT_RESPONSE%
+echo ^< %RESPONSE%
 
 @REM TODO: Parse response -> RESPONSE.choices[0].message.content
 @REM SET "CHATGPT_RESPONSE="
