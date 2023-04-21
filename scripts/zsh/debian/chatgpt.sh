@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-export OPEN_AI_API_KEY="PLACEHOLDER"
+export OPEN_AI_API_KEY="your_api_key_here" 
 function chatgpt() {
         conversationHistory=('{"role": "system", "content": "You are a helpful assistant."}')
 
