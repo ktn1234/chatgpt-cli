@@ -48,6 +48,7 @@ function chatgpt() {
         $body.messages = $conversationHistory
         $response = Invoke-RestMethod -Method Post -Uri $url -Headers $headers -Body ($body | ConvertTo-Json)
 
+        # Check if response is successful
         if ($response.StatusCode -ne 200) {
             Write-Host "An error has occurred. Exiting..."
             Write-Host
