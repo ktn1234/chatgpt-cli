@@ -49,7 +49,7 @@ function chatgpt() {
         $response = Invoke-RestMethod -Method Post -Uri $url -Headers $headers -Body ($body | ConvertTo-Json)
 
         # Check if response is successful
-        if ($response.StatusCode -ne 200) {
+        if ($? -ne $true) {
             Write-Host "An error has occurred. Exiting..."
             Write-Host
             break
