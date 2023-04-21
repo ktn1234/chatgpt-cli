@@ -57,7 +57,8 @@ To avoid typing your OpenAI API key every time you use ChatGPT CLI, you can conf
 #### 💻 Windows
 
 1. 📂 Create a new directory `C:\CustomCommands`
-2. 📁 Copy the files `scripts/powershell/chatgpt.ps1` and `scripts/cmd/chatgpt.bat` into `C:\CustomCommands`
+2. 🔑 Replace `your_api_key_here` with your OpenAI API key inside `scripts/powershell/chatgpt.ps1` or `scripts/cmd/chatgpt.bat`.
+3. 📁 Copy the files `scripts/powershell/chatgpt.ps1` and `scripts/cmd/chatgpt.bat` into `C:\CustomCommands`
 
 #### 🔒 Permissions and Configurations
 
