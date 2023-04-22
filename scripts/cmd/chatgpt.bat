@@ -24,7 +24,7 @@ if "%USER_INPUT%" == "" (
 
 @REM Check if user input is 'exit'
 if "%USER_INPUT%" == "exit" (
-    echo Terminated. Bye Bye!
+    echo ChatGPT Terminated. Bye Bye!
     goto :end
 )
 
@@ -55,16 +55,18 @@ SET "MESSAGES=%MESSAGES%, { \"role\": \"user\", \"content\": \"%USER_INPUT%\" }"
 @REM Add the conversation to the payload
 SET "PAYLOAD={ \"model\": \"gpt-3.5-turbo\", \"messages\": [ %MESSAGES% ] }"
 
+@REM NOTE: There is no error handling for the response and does not check for non 200 status codes
+@REM TODO: Add error handling for the response - Check for non 200 status codes
 @REM Get response from ChatGPT
 FOR /F "tokens=* USEBACKQ" %%F IN (`curl %URL% -s -H "%HEADER_CONTENT_TYPE%" -H "%HEADER_AUTHORIZATION%" -d "%PAYLOAD%"`) DO SET RESPONSE=%%F
 
-echo ^< %RESPONSE%
+@REM Parse response -> RESPONSE.choices[0].message.content
+FOR /F "tokens=* USEBACKQ" %%F IN (`echo %RESPONSE% ^| jq -r ".choices[0].message.content"`) DO SET CHATGPT_RESPONSE=%%F
 
-@REM TODO: Parse response -> RESPONSE.choices[0].message.content
-@REM SET "CHATGPT_RESPONSE="
+echo ^< %CHATGPT_RESPONSE%
 
 @REM Add response to messages
-@REM SET "MESSAGES=%MESSAGES%, { \"role\": \"user\", \"content\": \"%CHATGPT_RESPONSE%\" }"
+SET "MESSAGES=%MESSAGES%, { \"role\": \"user\", \"content\": \"%CHATGPT_RESPONSE%\" }"
 
 SET USER_INPUT=
 
