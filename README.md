@@ -4,12 +4,15 @@
 
 Before using ChatGPT CLI, make sure you have the following:
 
-- 📥[Node.js](https://nodejs.org/en) installed on your machine
 - 🔑An API key from OpenAI. You can get one by signing up for their [GPT-3 beta program](https://beta.openai.com/signup/).
+
+If you are using this with Node.js, make sure you have the following:
+
+- 📥[Node.js](https://nodejs.org/en) installed on your machine
 
 ## ⚙️ Setup and Usage
 
-#### 📦 Using a Different Package Manager
+### 📦 Using a Different Package Manager
 
 If you are using a package manager other than npm, replace the `npm` command with the appropriate command for your package manager. For example, if you are using `yarn`, replace `npm install` with `yarn install`. If you are using `pnpm`, replace `npm install` with `pnpm install`.
 
@@ -54,11 +57,13 @@ To avoid typing your OpenAI API key every time you use ChatGPT CLI, you can conf
 5. 🏃‍♀️ Run the command `chatgpt` in your terminal.
 6. 💬 Start chatting by entering your messages and pressing enter.
 
-#### 💻 Windows
+### 💻 Windows
 
 1. 📂 Create a new directory `C:\CustomCommands`
 2. 🔑 Replace `your_api_key_here` with your OpenAI API key inside `scripts/powershell/chatgpt.ps1` or `scripts/cmd/chatgpt.bat`.
 3. 📁 Copy the files `scripts/powershell/chatgpt.ps1` and `scripts/cmd/chatgpt.bat` into `C:\CustomCommands`
+4. 🔽 Download [jq](https://stedolan.github.io/jq/download/)
+5. 📥 Put the `jq.exe` file in `C:\CustomCommands` and rename it to just `jq`
 
 #### 🔒 Permissions and Configurations
 
